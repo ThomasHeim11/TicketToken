@@ -17,6 +17,8 @@ contract TicketToken is ERC721 {
         string location;
     }
 
+    mapping(uint256 => Occasion) occasions;
+
     constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
         owner = msg.sender;
     }
