@@ -8,13 +8,11 @@ describe("TicketToken", () => {
 
   describe("Deployment", () => {
     it("Sets the name", async () => {
-      let name = await ticketToken.name();
-      expect(name).to.equal("TicketToken");
+      expect(await ticketToken.name()).to.equal("TicketToken");
     });
 
     it("Sets the symbol", async () => {
-      let symbol = await ticketToken.symbol();
-      expect(symbol).to.equal("TT");
+      expect(await ticketToken.symbol()).to.equal("TT");
     });
   });
 });
