@@ -32,7 +32,15 @@ contract TicketToken is ERC721 {
         string memory _location,
         ) public { 
             totalOccasions ++;
-            Occasion(totalOccasions, _name, _cost, _maxTickets, _date, _time, _location);
 
-    }
+            occasions[totalOccasions] = Occasion(
+                totalOccasions,
+                 _name, 
+                 _cost, 
+                 _maxTickets,
+                  _date, 
+                  _time, 
+                  _location
+            );
+        }
 }
