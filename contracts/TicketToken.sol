@@ -9,4 +9,6 @@ contract TicketToken is ERC721 {
     constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
         owner = msg.sender;
     }
+
+    function list() public {}
 }
