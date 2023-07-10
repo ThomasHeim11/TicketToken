@@ -5,6 +5,17 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract TicketToken is ERC721 {
     address public owner;
+    uint256 public totalOccasions;
+
+    struct Occasion {
+        uint256 id;
+        string name;
+        uint256 cost;
+        uint256 maxTickets;
+        string date;
+        string time;
+        string location;
+    }
 
     constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
         owner = msg.sender;
@@ -18,6 +29,8 @@ contract TicketToken is ERC721 {
         string memory _time,
         string memory _location,
         ) public { 
+            totalOccasions = occasions + 1;
+            Occasion(totalOccasions, _name, _cost, _maxTickets, _date, _time, _location);
 
     }
 }
