@@ -1,5 +1,4 @@
 const { expect } = require("chai");
-const { async } = require("q");
 
 const NAME = "TicketToken";
 const SYMBOL = "TT";

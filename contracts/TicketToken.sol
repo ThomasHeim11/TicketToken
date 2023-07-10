@@ -31,6 +31,8 @@ contract TicketToken is ERC721 {
         string memory _time,
         string memory _location
     ) public {
+        require(msg.sender == owner);
+
         totalOccasions++;
 
         occasions[totalOccasions] = Occasion(totalOccasions, _name, _cost, _maxTickets, _date, _time, _location);
