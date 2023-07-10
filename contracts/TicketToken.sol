@@ -10,5 +10,14 @@ contract TicketToken is ERC721 {
         owner = msg.sender;
     }
 
-    function list() public {}
+    function list() public {
+        string memory _name,
+        uint256 _cost,
+        uint256 _maxTickets,
+        string memory _date,
+        string memory _time,
+        string memory _location,
+        ) public { 
+
+    }
 }
