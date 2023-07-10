@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract TicketToken is ERC721 {
 
-    constructor(string _name, string _symbol) {
+    constructor(string memory _name, string memory _symbol) {
 
     }
 }
