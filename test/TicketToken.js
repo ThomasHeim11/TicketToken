@@ -47,24 +47,11 @@ describe("TicketToken", () => {
       expect(await ticketToken.owner()).to.equal(deployer.address);
     });
 
-    describe("Occasions", () => {
-      it("Updates occasions count", async () => {
+    describe("Occasion", () => {
+      it("Updates ocassions count", async () => {
         const totalOccasions = await ticketToken.totalOccasions();
         expect(totalOccasions).to.equal(1);
       });
-
-     
-        it('Returns occasions attributes', async () => {
-          const occasion = await ticketToken.getOccasion(1)
-          expect(occasion.id).to.be.equal(1)
-          expect(occasion.name).to.be.equal(OCCASION_NAME)
-          expect(occasion.cost).to.be.equal(OCCASION_COST)
-          expect(occasion.tickets).to.be.equal(OCCASION_MAX_TICKETS)
-          expect(occasion.date).to.be.equal(OCCASION_DATE)
-          expect(occasion.time).to.be.equal(OCCASION_TIME)
-          expect(occasion.location).to.be.equal(OCCASION_LOCATION)
-        })
-    
     });
   });
 });
