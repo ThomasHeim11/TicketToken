@@ -23,24 +23,16 @@ contract TicketToken is ERC721 {
         owner = msg.sender;
     }
 
-    function list() public {
+    function list(
         string memory _name,
         uint256 _cost,
         uint256 _maxTickets,
         string memory _date,
         string memory _time,
-        string memory _location,
-        ) public { 
-            totalOccasions ++;
+        string memory _location
+    ) public {
+        totalOccasions++;
 
-            occasions[totalOccasions] = Occasion(
-                totalOccasions,
-                 _name, 
-                 _cost, 
-                 _maxTickets,
-                  _date, 
-                  _time, 
-                  _location
-            );
-        }
+        occasions[totalOccasions] = Occasion(totalOccasions, _name, _cost, _maxTickets, _date, _time, _location);
+    }
 }
