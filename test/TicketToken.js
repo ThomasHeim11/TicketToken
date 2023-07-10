@@ -11,7 +11,7 @@ const OCCASION_TIME = "10:00AM CST";
 const OCCASION_LOCATION = "Austin, Texas";
 
 describe("TicketToken", () => {
-  let TicketToken;
+  let ticketToken;
   let deployer, buyer;
 
   beforeEach(async () => {
