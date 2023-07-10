@@ -1,4 +1,5 @@
 const { expect } = require("chai");
+const { async } = require("q");
 
 const NAME = "TicketToken";
 const SYMBOL = "TT";
@@ -22,6 +23,10 @@ describe("TicketToken", () => {
 
     it("Sets the symbol", async () => {
       expect(await ticketToken.symbol()).to.equal(SYMBOL);
+    });
+
+    it("Sets the owner", async () => {
+        expect(await ticketToken.owner()).to.equal(deployer.address);
     });
   });
 });
