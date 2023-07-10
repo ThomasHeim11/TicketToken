@@ -14,6 +14,8 @@ describe("TicketToken", () => {
 
     const TicketToken = await ethers.getContractFactory("TicketToken");
     ticketToken = await TicketToken.deploy(NAME, SYMBOL);
+
+    await ticketToken.connect(deployer).list()
   });
 
   describe("Deployment", () => {
@@ -28,5 +30,14 @@ describe("TicketToken", () => {
     it("Sets the owner", async () => {
         expect(await ticketToken.owner()).to.equal(deployer.address);
     });
+
+    describe("Occasions", () => {
+
+        it('Updates occasions count', async () => {
+            const totalOccasions = await ticketToken.totalOccasions();
+            expect(totalOccasions).to.equal(1);
+
+        })
+    })
   });
 });
