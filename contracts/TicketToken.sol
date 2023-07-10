@@ -35,4 +35,8 @@ contract TicketToken is ERC721 {
 
         occasions[totalOccasions] = Occasion(totalOccasions, _name, _cost, _maxTickets, _date, _time, _location);
     }
+
+    function getOccasion(uint256 _id) public view returns (Occasion memory) {
+        return occasions[_id];
+    }
 }
