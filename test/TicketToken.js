@@ -11,5 +11,14 @@ describe("TicketToken", () => {
         expect(name).to.equal("TicketToken")
 
     });
+
+    it("Sets the symbol", async () => {
+        const TicketToken = await ethers.getContractFactory("TicketToken"); 
+        let ticketToken = await TicketToken.deploy("TicketToken", "TT");
+        let symbol = await ticketToken.symbol();
+        expect(symbol).to.equal("TT")
+
+    });
+
   });
 });
