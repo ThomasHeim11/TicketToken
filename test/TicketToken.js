@@ -54,7 +54,7 @@ describe("TicketToken", () => {
         expect(totalOccasions).to.equal(1);
       });
       it("Returns occasions attributes", async () => {
-        const occasion = await tokenMaster.getOccasion(1);
+        const occasion = await ticketToken.getOccasion(1);
         expect(occasion.id).to.be.equal(1);
         expect(occasion.name).to.be.equal(OCCASION_NAME);
         expect(occasion.cost).to.be.equal(OCCASION_COST);
