@@ -51,7 +51,7 @@ contract TicketToken is ERC721 {
         seatsTaken[_id].push(_seat);
         totalSupply++;
         _safeMint(msg.sender, totalSupply);
-    }.
+    }
 
     function getOccasion(uint256 _id) public view returns (Occasion memory) {
         return occasions[_id];
