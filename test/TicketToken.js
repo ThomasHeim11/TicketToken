@@ -1,7 +1,7 @@
 const { expect } = require("chai")
 
-const NAME = "TokenMaster"
-const SYMBOL = "TM"
+const NAME = "TicketToken"
+const SYMBOL = "TT"
 
 const OCCASION_NAME = "ETH Texas"
 const OCCASION_COST = ethers.utils.parseUnits('1', 'ether')
@@ -10,8 +10,8 @@ const OCCASION_DATE = "Apr 27"
 const OCCASION_TIME = "10:00AM CST"
 const OCCASION_LOCATION = "Austin, Texas"
 
-describe("TokenMaster", () => {
-  let tokenMaster
+describe("TicketToken", () => {
+  let ticketToken
   let deployer, buyer
 
   beforeEach(async () => {
@@ -19,10 +19,10 @@ describe("TokenMaster", () => {
     [deployer, buyer] = await ethers.getSigners()
 
     // Deploy contract
-    const TokenMaster = await ethers.getContractFactory("TokenMaster")
-    tokenMaster = await TokenMaster.deploy(NAME, SYMBOL)
+    const TicketToken = await ethers.getContractFactory("TicketToken")
+    ticketToken = await TicketToken.deploy(NAME, SYMBOL)
 
-    const transaction = await tokenMaster.connect(deployer).list(
+    const transaction = await ticketToken.connect(deployer).list(
       OCCASION_NAME,
       OCCASION_COST,
       OCCASION_MAX_TICKETS,
@@ -36,21 +36,21 @@ describe("TokenMaster", () => {
 
   describe("Deployment", () => {
     it("Sets the name", async () => {
-      expect(await tokenMaster.name()).to.equal(NAME)
+      expect(await ticketToken.name()).to.equal(NAME)
     })
 
     it("Sets the symbol", async () => {
-      expect(await tokenMaster.symbol()).to.equal(SYMBOL)
+      expect(await ticketToken.symbol()).to.equal(SYMBOL)
     })
 
     it("Sets the owner", async () => {
-      expect(await tokenMaster.owner()).to.equal(deployer.address)
+      expect(await ticketToken.owner()).to.equal(deployer.address)
     })
   })
 
   describe("Occasions", () => {
     it('Returns occasions attributes', async () => {
-      const occasion = await tokenMaster.getOccasion(1)
+      const occasion = await ticketToken.getOccasion(1)
       expect(occasion.id).to.be.equal(1)
       expect(occasion.name).to.be.equal(OCCASION_NAME)
       expect(occasion.cost).to.be.equal(OCCASION_COST)
@@ -61,7 +61,7 @@ describe("TokenMaster", () => {
     })
 
     it('Updates occasions count', async () => {
-      const totalOccasions = await tokenMaster.totalOccasions()
+      const totalOccasions = await ticketToken.totalOccasions()
       expect(totalOccasions).to.be.equal(1)
     })
   })
@@ -72,33 +72,33 @@ describe("TokenMaster", () => {
     const AMOUNT = ethers.utils.parseUnits('1', 'ether')
 
     beforeEach(async () => {
-      const transaction = await tokenMaster.connect(buyer).mint(ID, SEAT, { value: AMOUNT })
+      const transaction = await ticketToken.connect(buyer).mint(ID, SEAT, { value: AMOUNT })
       await transaction.wait()
     })
 
     it('Updates ticket count', async () => {
-      const occasion = await tokenMaster.getOccasion(1)
+      const occasion = await ticketToken.getOccasion(1)
       expect(occasion.tickets).to.be.equal(OCCASION_MAX_TICKETS - 1)
     })
 
     it('Updates buying status', async () => {
-      const status = await tokenMaster.hasBought(ID, buyer.address)
+      const status = await ticketToken.hasBought(ID, buyer.address)
       expect(status).to.be.equal(true)
     })
 
     it('Updates seat status', async () => {
-      const owner = await tokenMaster.seatTaken(ID, SEAT)
+      const owner = await ticketToken.seatTaken(ID, SEAT)
       expect(owner).to.equal(buyer.address)
     })
 
     it('Updates overall seating status', async () => {
-      const seats = await tokenMaster.getSeatsTaken(ID)
+      const seats = await ticketToken.getSeatsTaken(ID)
       expect(seats.length).to.equal(1)
       expect(seats[0]).to.equal(SEAT)
     })
 
     it('Updates the contract balance', async () => {
-      const balance = await ethers.provider.getBalance(tokenMaster.address)
+      const balance = await ethers.provider.getBalance(ticketToken.address)
       expect(balance).to.be.equal(AMOUNT)
     })
   })
@@ -112,10 +112,10 @@ describe("TokenMaster", () => {
     beforeEach(async () => {
       balanceBefore = await ethers.provider.getBalance(deployer.address)
 
-      let transaction = await tokenMaster.connect(buyer).mint(ID, SEAT, { value: AMOUNT })
+      let transaction = await ticketToken.connect(buyer).mint(ID, SEAT, { value: AMOUNT })
       await transaction.wait()
 
-      transaction = await tokenMaster.connect(deployer).withdraw()
+      transaction = await ticketToken.connect(deployer).withdraw()
       await transaction.wait()
     })
 
@@ -125,7 +125,7 @@ describe("TokenMaster", () => {
     })
 
     it('Updates the contract balance', async () => {
-      const balance = await ethers.provider.getBalance(tokenMaster.address)
+      const balance = await ethers.provider.getBalance(ticketToken.address)
       expect(balance).to.equal(0)
     })
   })

@@ -3,7 +3,7 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract TokenMaster is ERC721 {
+contract TicketToken is ERC721 {
     address public owner;
     uint256 public totalOccasions;
     uint256 public totalSupply;
@@ -93,4 +93,4 @@ contract TokenMaster is ERC721 {
         (bool success, ) = owner.call{value: address(this).balance}("");
         require(success);
     }
-},
+}.
