@@ -63,6 +63,18 @@ describe("TicketToken", () => {
         expect(occasion.time).to.be.equal(OCCASION_TIME);
         expect(occasion.location).to.be.equal(OCCASION_LOCATION);
       });
+
+      describe("Minting", () => {
+        const ID = 1
+        const SEAT = 50
+        const AMOUNT = ethers.utils.parseUnits('1', 'ether')
+
+        beforeEach(async () => {
+            const transaction = await tokenMaster.connect(buyer).mint(ID, SEAT, { value: AMOUNT})
+            await transaction.wait()
+
+        })
+      })
     });
   });
 });
