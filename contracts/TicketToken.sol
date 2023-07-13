@@ -44,6 +44,7 @@ contract TicketToken is ERC721 {
 
     function mint(uint256 _id, uint256 _seat) public payable {
         occasions[_id].tickets -= 1;
+        seatTaken[_id][_seat] = msg.sender;
         totalSupply++;
         _safeMint(msg.sender, totalSupply);
     }
