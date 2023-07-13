@@ -129,4 +129,4 @@ describe("TicketToken", () => {
       expect(balance).to.equal(0)
     })
   })
-}).
+})
