@@ -19,6 +19,11 @@ contract TicketToken is ERC721 {
 
     mapping(uint256 => Occasion) occasions;
 
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
     constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
         owner = msg.sender;
     }
@@ -30,18 +35,9 @@ contract TicketToken is ERC721 {
         string memory _date,
         string memory _time,
         string memory _location
-    ) public {
-        require(true);
+    ) public onlyOwner {
         totalOccasions++;
-        occasions[totalOccasions] = Occasion(
-            totalOccasions,
-            _name,
-            _cost,
-            _maxTickets,
-            _date,
-            _time,
-            _location
-        );
+        occasions[totalOccasions] = Occasion(totalOccasions, _name, _cost, _maxTickets, _date, _time, _location);
     }
 
     function getOccasion(uint256 _id) public view returns (Occasion memory) {
