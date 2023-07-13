@@ -20,6 +20,7 @@ contract TicketToken is ERC721 {
 
     mapping(uint256 => Occasion) occasions;
     mapping(uint256 => mapping(uint256 => address)) public seatTaken;
+    mapping(uint256 => uint256[]=) seatTaken;
 
     modifier onlyOwner() {
         require(msg.sender == owner);
