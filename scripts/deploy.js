@@ -44,12 +44,12 @@ async function main() {
       location: "Turkey, Istanbul"
     },
     {
-      name: "Dallas Mavericks vs. San Antonio Spurs",
+      name: "Chainlink Turkey",
       cost: tokens(5),
       tickets: 0,
       date: "Jun 11",
       time: "2:30PM CST",
-      location: "American Airlines Center - Dallas, TX"
+      location: "Turkey, Istanbul"
     },
     {
       name: "ETH Global Toronto",
