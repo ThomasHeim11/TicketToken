@@ -10,7 +10,7 @@ const Navigation = ({ account, setAccount }) => {
   return (
     <nav>
       <div className='nav__brand'>
-        <h1>tokenmaster</h1>
+        <h1>TicketToken</h1>
 
         <input className='nav__search' type="text" placeholder='Find millions of experiences' />
 

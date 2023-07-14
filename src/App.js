@@ -8,7 +8,7 @@ import Card from './components/Card'
 import SeatChart from './components/SeatChart'
 
 // ABIs
-import TokenMaster from './abis/TicketToken.json'
+import TicketToken from './abis/TicketToken.json'
 
 // Config
 import config from './config.json'
@@ -17,7 +17,7 @@ function App() {
   const [provider, setProvider] = useState(null)
   const [account, setAccount] = useState(null)
 
-  const [tokenMaster, setTokenMaster] = useState(null)
+  const [ticketToken, setTicketToken] = useState(null)
   const [occasions, setOccasions] = useState([])
 
   const [occasion, setOccasion] = useState({})
@@ -28,14 +28,14 @@ function App() {
     setProvider(provider)
 
     const network = await provider.getNetwork()
-    const tokenMaster = new ethers.Contract(config[network.chainId].TokenMaster.address, TokenMaster, provider)
-    setTokenMaster(tokenMaster)
+    const ticketToken = new ethers.Contract(config[network.chainId].TicketToken.address, TicketToken, provider)
+    setTicketToken(ticketToken)
 
-    const totalOccasions = await tokenMaster.totalOccasions()
+    const totalOccasions = await ticketToken.totalOccasions()
     const occasions = []
 
     for (var i = 1; i <= totalOccasions; i++) {
-      const occasion = await tokenMaster.getOccasion(i)
+      const occasion = await ticketToken.getOccasion(i)
       occasions.push(occasion)
     }
 
@@ -67,7 +67,7 @@ function App() {
           <Card
             occasion={occasion}
             id={index + 1}
-            tokenMaster={tokenMaster}
+            ticketToken={ticketToken}
             provider={provider}
             account={account}
             toggle={toggle}
@@ -81,7 +81,7 @@ function App() {
       {toggle && (
         <SeatChart
           occasion={occasion}
-          tokenMaster={tokenMaster}
+          ticketToken={ticketToken}
           provider={provider}
           setToggle={setToggle}
         />

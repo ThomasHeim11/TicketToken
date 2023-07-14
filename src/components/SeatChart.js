@@ -6,12 +6,12 @@ import Seat from './Seat'
 // Import Assets
 import close from '../assets/close.svg'
 
-const SeatChart = ({ occasion, tokenMaster, provider, setToggle }) => {
+const SeatChart = ({ occasion, ticketToken, provider, setToggle }) => {
   const [seatsTaken, setSeatsTaken] = useState(false)
   const [hasSold, setHasSold] = useState(false)
 
   const getSeatsTaken = async () => {
-    const seatsTaken = await tokenMaster.getSeatsTaken(occasion.id)
+    const seatsTaken = await ticketToken.getSeatsTaken(occasion.id)
     setSeatsTaken(seatsTaken)
   }
 
@@ -19,7 +19,7 @@ const SeatChart = ({ occasion, tokenMaster, provider, setToggle }) => {
     setHasSold(false)
 
     const signer = await provider.getSigner()
-    const transaction = await tokenMaster.connect(signer).mint(occasion.id, _seat, { value: occasion.cost })
+    const transaction = await ticketToken.connect(signer).mint(occasion.id, _seat, { value: occasion.cost })
     await transaction.wait()
 
     setHasSold(true)
