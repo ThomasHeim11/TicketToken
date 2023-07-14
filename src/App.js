@@ -8,7 +8,7 @@ import Card from './components/Card'
 import SeatChart from './components/SeatChart'
 
 // ABIs
-import TokenMaster from './abis/TokenMaster.json'
+import TokenMaster from './abis/TicketToken.json'
 
 // Config
 import config from './config.json'
