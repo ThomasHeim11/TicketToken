@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
-import { ethers } from 'ethers';
+import { useEffect, useState } from "react";
+import { ethers } from "ethers";
 
 // Components
-import Navigation from './components/Navigation';
-import Sort from './components/Sort';
-import Card from './components/Card';
-import SeatChart from './components/SeatChart';
+import Navigation from "./components/Navigation";
+import Sort from "./components/Sort";
+import Card from "./components/Card";
+import SeatChart from "./components/SeatChart";
 
 // ABIs
-import TicketToken from './abis/TicketToken.json';
+import TicketToken from "./abis/TicketToken.json";
 
 // Config
-import config from './config.json';
+import config from "./config.json";
 
 function App() {
   const [provider, setProvider] = useState(null);
@@ -45,8 +45,10 @@ function App() {
 
     setOccasions(occasions);
 
-    window.ethereum.on('accountsChanged', async () => {
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    window.ethereum.on("accountsChanged", async () => {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
       const account = ethers.utils.getAddress(accounts[0]);
       setAccount(account);
     });
