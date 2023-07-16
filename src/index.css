@@ -8,7 +8,7 @@
 
 :root {
   --clr-white: #f6eded;
-  --clr-black: #ffffff;
+  --clr-black: #f7f5f5;
   --clr-grey: #181717;
   --clr-grey-2: #1b1a1a;
 
@@ -187,7 +187,7 @@ header {
   height: 40px;
 
   margin: 25px 5px;
-  border: 1px solid var(--clr-black);
+  border: 1px solid var(--clr-white);
 
   display: flex;
   justify-content: space-between;
@@ -435,7 +435,7 @@ header {
 
   height: 150px;
 
-  border: 3px solid black;
+  border: 3px solid rgb(238, 230, 230);
   border-radius: 0 0 24px 24px;
 }
 
@@ -443,7 +443,7 @@ header {
 .occasion__spacer--2 {
   min-width: 30px;
   margin: 0 5px;
-  border: 1px solid black;
+  border: 1px solid rgb(250, 246, 246);
   writing-mode: vertical-lr;
 }
 
