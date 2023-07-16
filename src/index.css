@@ -7,10 +7,10 @@
 }
 
 :root {
-  --clr-white: #f6eded;
-  --clr-black: #f7f5f5;
-  --clr-grey: #181717;
-  --clr-grey-2: #1b1a1a;
+  --clr-white: #fbfbfb;
+  --clr-black: #000000;
+  --clr-grey: #242323;
+  --clr-grey-2: #ffffff;
 
   --clr-dark-blue: #ff0e46;
   --clr-light-blue: #3c12c6;
@@ -443,7 +443,7 @@ header {
 .occasion__spacer--2 {
   min-width: 30px;
   margin: 0 5px;
-  border: 1px solid rgb(250, 246, 246);
+  border: 1px solid rgb(249, 245, 245);
   writing-mode: vertical-lr;
 }
 
