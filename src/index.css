@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poiret+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poiret+One&display=swap");
 
 * {
   margin: 0;
@@ -7,13 +7,13 @@
 }
 
 :root {
-  --clr-white: #FFFFFF;
+  --clr-white: #fffbfb;
   --clr-black: #000000;
   --clr-grey: #2b2727;
   --clr-grey-2: #2b2727;
 
-  --clr-dark-blue: #0237AB;
-  --clr-light-blue: #125AC6;
+  --clr-dark-blue: #ff0e46;
+  --clr-light-blue: #3c12c6;
 }
 
 body {
@@ -47,7 +47,7 @@ nav {
   color: var(--clr-white);
 
   font-family: "Poiret One";
-  font-size: 1.50em;
+  font-size: 1.5em;
   font-style: italic;
   margin-right: 10px;
 }
@@ -119,7 +119,7 @@ nav {
   border-radius: 4px;
 
   font-family: "Open Sans";
-  font-size: 1.10em;
+  font-size: 1.1em;
   font-weight: 600;
 
   cursor: pointer;
@@ -134,7 +134,13 @@ nav {
 /* -- HEADER -- */
 
 header {
-  background-image: linear-gradient(45deg, var(--clr-dark-blue) 10%, var(--clr-light-blue) 20%, var(--clr-dark-blue) 50%, var(--clr-light-blue) 120%);
+  background-image: linear-gradient(
+    45deg,
+    var(--clr-dark-blue) 10%,
+    var(--clr-light-blue) 20%,
+    var(--clr-dark-blue) 50%,
+    var(--clr-light-blue) 120%
+  );
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
@@ -182,7 +188,7 @@ header {
 
 .sort__select p {
   margin-left: 10px;
-  font-size: clamp(0.80rem, 2vw, 1rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .sort__select img {
@@ -229,9 +235,8 @@ header {
   background: rgba(18, 90, 198, 0.2);
 }
 
-
 .card__info p small {
-  font-size: clamp(0.80rem, 2vw, 0.90rem);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
 .card__info p small span {
@@ -254,7 +259,7 @@ header {
   align-self: end;
 
   font-family: "Open Sans";
-  font-size: clamp(0.90rem, 3vw, 1.10rem);
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   font-weight: 600;
 
   text-align: center;
@@ -277,13 +282,13 @@ header {
   grid-row: 1 / span 2;
   place-self: center;
 
-  font-size: clamp(1rem, 3vw, 1.10rem);
+  font-size: clamp(1rem, 3vw, 1.1rem);
   font-weight: 300;
 }
 
 .card__cost strong {
   font-family: "Open Sans";
-  font-size: clamp(1.10rem, 3vw, 1.50rem);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
   font-weight: 700;
   margin: 0;
 }
@@ -321,7 +326,7 @@ header {
 }
 
 .card__button--out {
-  background-color: #BA1840;
+  background-color: #ba1840;
 }
 
 .card hr {
@@ -347,7 +352,11 @@ header {
   gap: 5px;
   grid-template-columns: repeat(25, 1fr);
 
-  background: linear-gradient(to bottom, var(--clr-light-blue), var(--clr-white) 75%);
+  background: linear-gradient(
+    to bottom,
+    var(--clr-light-blue),
+    var(--clr-white) 75%
+  );
   border: 10px solid var(--clr-grey);
   border-radius: 8px;
 
@@ -532,5 +541,9 @@ header {
     grid-column: 10 / span 3;
     grid-row: 2 / span 2;
     place-self: center;
+  }
+
+  .rounded-button {
+    border-radius: 50%;
   }
 }
