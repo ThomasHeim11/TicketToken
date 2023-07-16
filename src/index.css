@@ -7,13 +7,18 @@
 }
 
 :root {
-  --clr-white: #fffbfb;
-  --clr-black: #000000;
-  --clr-grey: #2b2727;
-  --clr-grey-2: #2b2727;
+  --clr-white: #f6eded;
+  --clr-black: #ffffff;
+  --clr-grey: #181717;
+  --clr-grey-2: #1b1a1a;
 
   --clr-dark-blue: #ff0e46;
   --clr-light-blue: #3c12c6;
+}
+
+html,
+body {
+  height: 100%; /* Set html and body height to 100% to take up the full viewport */
 }
 
 body {
@@ -21,8 +26,13 @@ body {
   font-family: "Open Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #b09649; /* Set a dark background color (e.g., #b09649) */
+  background-image: url("./assets/dynamic-picture.jpg"); /* Path to your dynamic picture */
+  background-size: cover; /* Resize the image to cover the background */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* Prevent background from scrolling */
 }
-
 /* ------------------------------------------------------ */
 /* -- NAVIGATION -- */
 
@@ -53,7 +63,7 @@ nav {
 }
 
 .nav__search {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(249, 249, 249, 0.2);
   background-image: url("./assets/magnifying-glass.svg");
   background-repeat: no-repeat;
   background-position-y: center;
@@ -339,7 +349,7 @@ header {
 .occasion {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(39, 33, 33, 0.7);
 
   position: fixed;
   top: 50%;
