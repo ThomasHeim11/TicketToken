@@ -20,14 +20,17 @@ This is a decentralized ticket marketplace smart contract for managing NFT (Non-
 
 # About
 
-StableCrypto Dollar (SCD) is a decentralized, algorithmic stablecoin designed to maintain stability relative to the United States Dollar (USD). The contract, owned by DSCEngine, operates as an ERC20 token and enables users to mint and burn tokens through interaction with the DSCEngine smart contract.
+Introducing the Decentralized Ticket Marketplace, a smart contract built on the Ethereum blockchain using the ERC721 standard to manage NFT (Non-Fungible Token) tickets. This innovative marketplace provides a secure and transparent platform for handling ticket transactions for various occasions and events. Through the smart contract, users can easily create occasions, specifying essential details such as occasion name, ticket cost, maximum ticket availability, date, time, and location. These occasions are stored on the blockchain, ensuring immutability and accessibility for all participants.
 
-SCD's stability is ensured through a collateralization mechanism where users can deposit WETH (Wrapped Ether) and WBTC (Wrapped Bitcoin) in exchange for the stablecoin. These collateralized assets provide the necessary backing to maintain the peg to the USD, giving users confidence in the stability of the StableCrypto Dollar.
+Once an occasion is listed, users can seamlessly purchase tickets for their desired events. Each ticket represents a unique NFT, providing a digital representation of the purchased ticket. By leveraging the power of NFTs, users gain ownership over their event tickets, enabling easy transferability, verification, and secure storage. With this decentralized ticket marketplace, event organizers can reach a broader audience, while attendees enjoy a frictionless ticketing experience, free from intermediaries and counterfeit concerns. Embrace the future of ticketing with the NFT-powered Decentralized Ticket Marketplace.
 
-As an algorithmic stablecoin, StableCrypto Dollar does not rely on a centralized entity to control its minting and burning processes. Instead, it employs an algorithmic approach, automatically adjusting the token supply based on demand and market conditions to maintain its peg to the USD.
+Key Features:
 
-This design allows StableCrypto Dollar to be independent of traditional financial systems and provides a decentralized alternative for users seeking a stable store of value and medium of exchange within the cryptocurrency ecosystem. Users can leverage the stability and convenience of StableCrypto Dollar for various use cases such as trading, remittances, and as a hedging instrument in the volatile cryptocurrency market.
-
+- Creation of occasions with detailed event information.
+- Purchase of unique NFT tickets for listed occasions.
+- Secure ownership and transferability of event tickets through NFTs.
+- Elimination of counterfeit ticketing and intermediary involvement.
+- Transparent and immutable storage of occasion data on the Ethereum blockchain.
 
 
 # Getting Started
