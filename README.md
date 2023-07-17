@@ -74,37 +74,13 @@ This will default to your local node. You need to have it running in another ter
 npx hardhat run --network hardhat scripts/deploy.js
 ```
 
-## Deploy - Other Network
-
-[See below](#deployment-to-a-testnet-or-mainnet)
-
 ## Testing
 
-We talk about 4 test tiers in the video. 
-
-1. Unit
-2. Integration
-3. Forked
-4. Staging
-
-In this repo we cover #1 and Fuzzing. 
+In this repo we cover unit testing
 
 ```
-forge test
+npx hardhat test
 ```
-
-### Test Coverage
-
-```
-forge coverage
-```
-
-and for coverage based testing: 
-
-```
-forge coverage --report debug
-```
-
 
 # Deployment to a testnet or mainnet
 
@@ -125,52 +101,8 @@ Head over to [faucets.chain.link](https://faucets.chain.link/) and get some tesn
 2. Deploy
 
 ```
-make deploy ARGS="--network sepolia"
-```
+npx hardhat run scripts/deploy.js --network sepolia```
 
-## Scripts
-
-Instead of scripts, we can directly use the `cast` command to interact with the contract. 
-
-For example, on Sepolia:
-
-1. Get some WETH 
-
-```
-cast send 0xdd13E55209Fd76AfE204dBda4007C227904f0a81 "deposit()" --value 0.1ether --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY
-```
-
-2. Approve the WETH
-
-```
-cast send 0xdd13E55209Fd76AfE204dBda4007C227904f0a81 "approve(address,uint256)" 0x091EA0838eBD5b7ddA2F2A641B068d6D59639b98 1000000000000000000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY
-```
-
-3. Deposit and Mint DSC
-
-```
-cast send 0x091EA0838eBD5b7ddA2F2A641B068d6D59639b98 "depositCollateralAndMintDsc(address,uint256,uint256)" 0xdd13E55209Fd76AfE204dBda4007C227904f0a81 100000000000000000 10000000000000000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY
-```
-
-
-## Estimate gas
-
-You can estimate how much gas things cost by running:
-
-```
-forge snapshot
-```
-
-And you'll see and output file called `.gas-snapshot`
-
-
-# Formatting
-
-
-To run code formatting:
-```
-forge fmt
-```
 
 # Thank you!
 
