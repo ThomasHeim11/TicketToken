@@ -1,5 +1,5 @@
 # TicketToken 
-This is a decentralized ticket marketplace smart contract for managing NFT (Non-Fungible Token) tickets using the ERC721 standard. The smart contract allows the creation of occasions (events) with specific details such as the name, cost of each ticket, maximum tickets available, date, time, and location. Users can then buy tickets for these occasions, and each ticket is represented as a unique NFT.
+This is a decentralized ticket marketplace smart contract for managing NFT (Non-Fungible Token) tickets using the ERC721 standard. The smart contract allows the creation of occasions (events) with specific details such as the name, cost of each ticket, maximum tickets available, date, time, and location. Users can then buy tickets for these occasions, and each ticket is represented as a unique NFT. Deployed to the Sepolia testnet.
 
 <img width="1797" alt="Screenshot 2023-07-17 at 04 53 40" src="https://github.com/ThomasHeim11/StableCryptoDollar/assets/106417552/a7d3cc2c-2b59-4f10-8689-23d269f9f15a">
 
