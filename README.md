@@ -12,13 +12,8 @@ This is a decentralized ticket marketplace smart contract for managing NFT (Non-
 - [Usage](#usage)
   - [Start a local node](#start-a-local-node)
   - [Deploy](#deploy)
-  - [Deploy - Other Network](#deploy---other-network)
   - [Testing](#testing)
-    - [Test Coverage](#test-coverage)
 - [Deployment to a testnet or mainnet](#deployment-to-a-testnet-or-mainnet)
-  - [Scripts](#scripts)
-  - [Estimate gas](#estimate-gas)
-- [Formatting](#formatting)
 - [Thank you!](#thank-you)
 
 
