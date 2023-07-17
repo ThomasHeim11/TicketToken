@@ -56,15 +56,14 @@ If you can't or don't want to run and install locally, you can work with this re
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/PatrickAlphaC/foundry-smart-contract-lottery-f23)
 
-# Updates
-- The latest version of openzeppelin-contracts has changes in the ERC20Mock file. To follow along with the course, you need to install version 4.8.3 which can be done by ```forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit``` instead of ```forge install openzeppelin/openzeppelin-contracts --no-commit```
+
 
 # Usage
 
 ## Start a local node
 
 ```
-make anvil
+npx hardhat node
 ```
 
 ## Deploy
@@ -72,7 +71,7 @@ make anvil
 This will default to your local node. You need to have it running in another terminal in order for it to deploy.
 
 ```
-make deploy
+npx hardhat run --network hardhat scripts/deploy.js
 ```
 
 ## Deploy - Other Network
