@@ -100,8 +100,7 @@ Head over to [faucets.chain.link](https://faucets.chain.link/) and get some tesn
 
 2. Deploy
 
-```
-npx hardhat run scripts/deploy.js --network sepolia```
+```npx hardhat run scripts/deploy.js --network sepolia```
 
 
 # Thank you!
