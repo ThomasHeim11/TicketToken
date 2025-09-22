@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.6",
-    "@testing-library/jest-dom": "^6.7.0",
+    "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "dotenv": "^16.6.1",
